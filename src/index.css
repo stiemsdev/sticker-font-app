@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Minimale basis-styling */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Custom slider styling */
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #3b82f6;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.slider::-moz-range-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #3b82f6;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive preview styling */
+.preview-wrapper {
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Print styling */
+@media print {
+  /* Hide everything except the print content */
+  body * {
+    visibility: hidden;
+  }
+  
+  /* Show only the print content */
+  #print-content,
+  #print-content * {
+    visibility: visible !important;
+  }
+  
+  /* Reset any transforms and ensure proper positioning */
+  #print-content {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  /* Hide preview elements during print */
+  .preview-wrapper {
+    min-height: none;
+  }
+  
+  /* Hide grid in print */
+  .grid-overlay {
+    display: none !important;
+  }
+  
+  /* Reset any box shadows and borders */
+  #print-content {
+    box-shadow: none !important;
+    border: none !important;
+  }
+}
