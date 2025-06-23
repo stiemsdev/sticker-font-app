@@ -3,7 +3,7 @@ import { Listbox } from "@headlessui/react";
 import { ChevronUpDownIcon, CheckIcon } from "@heroicons/react/20/solid";
 import WebFont from "webfontloader";
 
-const API_KEY = "AIzaSyDdsSI5i__DskwfOnW4PYoHNsUTB4Xc5ag";
+const API_KEY = import.meta.env.VITE_GOOGLE_FONTS_API_KEY;
 const GOOGLE_FONTS_API = `https://www.googleapis.com/webfonts/v1/webfonts?key=${API_KEY}`;
 
 function useGoogleFonts() {
