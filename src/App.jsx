@@ -225,7 +225,6 @@ export default function App() {
               justify-content: ${getJustifyContent(alignH)};
               box-sizing: border-box;
               position: relative;
-              overflow: hidden;
             }
             .sticker-text {
               font-family: "${font}", system-ui, -apple-system, sans-serif;
@@ -291,8 +290,10 @@ export default function App() {
     justifyContent: getJustifyContent(alignH),
     boxSizing: "border-box",
     position: "relative",
-    overflow: "hidden",
+    /* overflow: hidden; */ /* Verwijderd om clipping van lettertypes te voorkomen */
     border: "1px solid #ccc",
+    margin: "auto",
+    boxShadow: '0 2px 8px 0 rgba(0,0,0,0.08)',
   };
 
   // Bepaal of portrait of landscape
@@ -627,10 +628,6 @@ export default function App() {
                       background: bgColor,
                       boxSizing: "border-box",
                       position: "relative",
-                      overflow: "hidden",
-                      border: "1px solid #ccc",
-                      margin: "auto",
-                      boxShadow: '0 2px 8px 0 rgba(0,0,0,0.08)',
                     }}
                   >
                     {showGrid && (
@@ -644,7 +641,6 @@ export default function App() {
                       style={{
                         width: '100%',
                         height: '100%',
-                        overflow: 'hidden',
                         wordBreak: 'break-word',
                         display: 'flex',
                         alignItems: getAlignItems(alignV),
@@ -690,10 +686,6 @@ export default function App() {
                       background: bgColor,
                       boxSizing: "border-box",
                       position: "relative",
-                      overflow: "hidden",
-                      border: "1px solid #ccc",
-                      margin: "auto",
-                      boxShadow: '0 2px 8px 0 rgba(0,0,0,0.08)',
                     }}
                   >
                     {showGrid && (
@@ -707,7 +699,6 @@ export default function App() {
                       style={{
                         width: '100%',
                         height: '100%',
-                        overflow: 'hidden',
                         wordBreak: 'break-word',
                         display: 'flex',
                         alignItems: getAlignItems(alignV),
